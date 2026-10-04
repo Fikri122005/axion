@@ -34,5 +34,16 @@ class UserSeeder extends Seeder
                 'email_verified_at' => now(),
             ]
         );
+
+        User::firstOrCreate(
+            ['email' => 'user@axionvet.test'],
+            [
+                'name' => 'Pengguna',
+                'password' => Hash::make('password'),
+                'role' => 'user',
+                'is_active' => true,
+                'email_verified_at' => now(),
+            ]
+        );
     }
 }
