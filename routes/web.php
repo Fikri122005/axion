@@ -11,17 +11,33 @@ use App\Http\Controllers\PenyakitController;
 use App\Http\Controllers\RiwayatDiagnosaController;
 use Illuminate\Support\Facades\Route;
 
+<<<<<<< HEAD
 // Halaman Utama
+=======
+>>>>>>> 4ffa67b0066a29241f078b9971b0a9af43ebb354
 Route::get('/', function () {
     return view('welcome');
 });
 
+<<<<<<< HEAD
 // Guest / Auth Routes
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 
 Route::get('/register', [RegisterController::class, 'showRegisterForm'])->name('register');
 Route::post('/register', [RegisterController::class, 'register']);
+=======
+// Guest Authentication Routes
+Route::middleware('guest')->group(function () {
+    // Login Routes
+    Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+    Route::post('/login', [LoginController::class, 'login']);
+
+    // Register Routes
+    Route::get('/register', [RegisterController::class, 'showRegisterForm'])->name('register');
+    Route::post('/register', [RegisterController::class, 'register']);
+});
+>>>>>>> 4ffa67b0066a29241f078b9971b0a9af43ebb354
 
 // Authenticated Routes
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout')->middleware('auth');
@@ -38,4 +54,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/basis-pengetahuan', [BasisPengetahuanController::class, 'index'])->name('basis-pengetahuan');
     Route::get('/bobot-keyakinan', [BobotKeyakinanController::class, 'index'])->name('bobot-keyakinan');
     Route::get('/riwayat-diagnosa', [RiwayatDiagnosaController::class, 'index'])->name('riwayat');
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 4ffa67b0066a29241f078b9971b0a9af43ebb354

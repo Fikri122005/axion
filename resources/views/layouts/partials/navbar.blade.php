@@ -186,6 +186,10 @@
       <!--end::Color Mode Toggle-->
 
       <!--begin::User Menu Dropdown-->
+<<<<<<< HEAD
+=======
+      @auth
+>>>>>>> 4ffa67b0066a29241f078b9971b0a9af43ebb354
       <li class="nav-item dropdown user-menu">
         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
           <img
@@ -193,7 +197,11 @@
             class="user-image rounded-circle shadow"
             alt="User Image"
           />
+<<<<<<< HEAD
           <span class="d-none d-md-inline">Alexander Pierce</span>
+=======
+          <span class="d-none d-md-inline">{{ Auth::user()->name }}</span>
+>>>>>>> 4ffa67b0066a29241f078b9971b0a9af43ebb354
         </a>
         <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
           <!--begin::User Image-->
@@ -204,28 +212,66 @@
               alt="User Image"
             />
             <p>
+<<<<<<< HEAD
               Alexander Pierce - Web Developer
               <small>Member since Nov. 2026</small>
+=======
+              {{ Auth::user()->name }}
+              <small class="d-block text-white-50">{{ Auth::user()->email }}</small>
+              <span class="badge text-bg-light text-primary mt-1 text-uppercase">{{ Auth::user()->role }}</span>
+>>>>>>> 4ffa67b0066a29241f078b9971b0a9af43ebb354
             </p>
           </li>
           <!--end::User Image-->
           <!--begin::Menu Body-->
           <li class="user-body">
             <div class="row">
+<<<<<<< HEAD
               <div class="col-4 text-center"><a href="#">Followers</a></div>
               <div class="col-4 text-center"><a href="#">Sales</a></div>
               <div class="col-4 text-center"><a href="#">Friends</a></div>
+=======
+              <div class="col-12 text-center text-muted small">
+                <i class="bi bi-clock-history me-1"></i> Bergabung: {{ Auth::user()->created_at?->translatedFormat('d M Y') ?? 'Baru' }}
+              </div>
+>>>>>>> 4ffa67b0066a29241f078b9971b0a9af43ebb354
             </div>
           </li>
           <!--end::Menu Body-->
           <!--begin::Menu Footer-->
+<<<<<<< HEAD
           <li class="user-footer">
             <a href="#" class="btn btn-default btn-flat">Profile</a>
             <a href="#" class="btn btn-default btn-flat float-end">Sign out</a>
+=======
+          <li class="user-footer d-flex justify-content-between">
+            <a href="{{ route('admin.dashboard') }}" class="btn btn-default btn-flat">Dashboard</a>
+            <form action="{{ route('logout') }}" method="POST" class="d-inline m-0">
+              @csrf
+              <button type="submit" class="btn btn-danger btn-flat">
+                <i class="bi bi-box-arrow-right me-1"></i> Keluar
+              </button>
+            </form>
+>>>>>>> 4ffa67b0066a29241f078b9971b0a9af43ebb354
           </li>
           <!--end::Menu Footer-->
         </ul>
       </li>
+<<<<<<< HEAD
+=======
+      @else
+      <li class="nav-item ms-2">
+        <a href="{{ route('login') }}" class="btn btn-sm btn-outline-primary px-3">
+          <i class="bi bi-box-arrow-in-right me-1"></i> Masuk
+        </a>
+      </li>
+      <li class="nav-item ms-2">
+        <a href="{{ route('register') }}" class="btn btn-sm btn-primary px-3">
+          <i class="bi bi-person-plus me-1"></i> Daftar
+        </a>
+      </li>
+      @endauth
+>>>>>>> 4ffa67b0066a29241f078b9971b0a9af43ebb354
       <!--end::User Menu Dropdown-->
     </ul>
     <!--end::End Navbar Links-->

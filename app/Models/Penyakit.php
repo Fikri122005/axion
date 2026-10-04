@@ -66,6 +66,7 @@ class Penyakit extends Model
     {
         return $this->hasMany(RiwayatDiagnosa::class, 'penyakit_terpilih_id');
     }
+<<<<<<< HEAD
 
     /**
      * Get the detail diagnosa records for this penyakit.
@@ -74,4 +75,6 @@ class Penyakit extends Model
     {
         return $this->hasMany(DetailDiagnosa::class, 'penyakit_id');
     }
+=======
+>>>>>>> 4ffa67b0066a29241f078b9971b0a9af43ebb354
 }

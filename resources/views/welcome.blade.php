@@ -20,6 +20,7 @@
     <body class="bg-[#FDFDFC] dark:bg-[#0a0a0a] text-[#1b1b18] flex p-6 lg:p-8 items-center lg:justify-center min-h-screen flex-col">
         <header class="w-full lg:max-w-4xl max-w-[335px] text-sm mb-6">
             <nav class="flex items-center justify-between gap-4">
+<<<<<<< HEAD
                 <span class="font-semibold text-base">{{ config('app.name', 'Axion') }}</span>
                 <a
                     href="{{ route('admin.dashboard') }}"
@@ -27,6 +28,38 @@
                 >
                     AdminLTE Dashboard &rarr;
                 </a>
+=======
+                <span class="font-semibold text-base">{{ config('app.name', 'Axion Vet') }}</span>
+                <div class="flex items-center gap-2">
+                    @auth
+                        <a
+                            href="{{ route('admin.dashboard') }}"
+                            class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal font-medium"
+                        >
+                            AdminLTE Dashboard &rarr;
+                        </a>
+                    @else
+                        <a
+                            href="{{ route('login') }}"
+                            class="inline-block px-4 py-1.5 dark:text-[#EDEDEC] text-[#1b1b18] hover:underline text-sm font-medium"
+                        >
+                            Masuk
+                        </a>
+                        <a
+                            href="{{ route('register') }}"
+                            class="inline-block px-4 py-1.5 bg-[#0d6efd] text-white hover:bg-[#0b5ed7] rounded-sm text-sm font-medium"
+                        >
+                            Daftar
+                        </a>
+                        <a
+                            href="{{ route('admin.dashboard') }}"
+                            class="inline-block px-4 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm font-medium"
+                        >
+                            Dashboard &rarr;
+                        </a>
+                    @endauth
+                </div>
+>>>>>>> 4ffa67b0066a29241f078b9971b0a9af43ebb354
             </nav>
         </header>
         <div class="flex items-center justify-center w-full transition-opacity opacity-100 duration-750 lg:grow starting:opacity-0">

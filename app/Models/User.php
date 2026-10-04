@@ -7,7 +7,10 @@ use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Hidden;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Relations\HasMany;
+=======
+>>>>>>> 4ffa67b0066a29241f078b9971b0a9af43ebb354
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -31,6 +34,7 @@ class User extends Authenticatable
             'is_active' => 'boolean',
         ];
     }
+<<<<<<< HEAD
 
     /**
      * Get the riwayat diagnosa records for this user.
@@ -39,4 +43,6 @@ class User extends Authenticatable
     {
         return $this->hasMany(RiwayatDiagnosa::class, 'user_id');
     }
+=======
+>>>>>>> 4ffa67b0066a29241f078b9971b0a9af43ebb354
 }
